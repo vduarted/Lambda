@@ -63,3 +63,39 @@ document.addEventListener("DOMContentLoaded", function(event) {
 //            conteudo.text("MAIS VENDIDOS");
 //        }
 });
+//Permite excluir as categorias de filmes já cadastradas da página de de Categorias
+$(document).ready(function () {
+    //Pega os valores
+    $('.deletarCategoria').click(function () {
+        var $botaoClicado = $(this).find('.fas');
+        var $paiBotao = $(this);
+        var $codCategoria = $(this).attr('idCategoria');
+        // AJAX request
+        $.ajax({
+            url: 'removerCategorias.php',
+            type: 'post',
+            dataType: "json",
+            data: {
+                codCategoria: $codCategoria
+            },
+            beforeSend: function () {
+                // setting a timeout
+                $botaoClicado.removeClass("fa-trash-alt").addClass("fa-spinner fa-spin");
+            },
+            success: function (response) {
+                // Resposta
+                if (response == 1) {
+                    setTimeout(function () {
+                        $paiBotao.removeClass("btn-danger").addClass("btn-success");
+                        $botaoClicado.removeClass("fa-spinner fa-spin").addClass("fa-check-circle");
+                    }, 1000);
+                    setTimeout(function () {
+                        $("#" + $codCategoria).fadeOut(500, function () {
+                            $("#" + $codCategoria).remove();
+                        });
+                    }, 1000);
+                }
+            }
+        });
+    });
+});

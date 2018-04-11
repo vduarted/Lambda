@@ -482,5 +482,8 @@ Página de gestão de categorias
 
 .listaCategorias{
     padding: 10px;
+}
+
+.listaCategorias .btn-group{
     margin-bottom: 10px;
 }

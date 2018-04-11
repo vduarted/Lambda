@@ -1,6 +1,7 @@
 <?php
     include "conexao.php";
-    $buscaCategorias = mysqli_query($conexao, "SELECT * FROM tb_categoria;"); 
+    $buscaCategorias = mysqli_query($conexao, "SELECT * FROM tb_categoria;");
+    $quantResultados = mysqli_num_rows($buscaCategorias);
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -29,12 +30,23 @@
     <!-- Listagem de categorias -->
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-12">
                 <div class="listaCategorias">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-info">Terror</button>
-                        <button type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
-                    </div>
+                    <?php 
+                        for ($i=0;
+                            $i < $quantResultados;
+                            $i++) {
+                                $categoriasResultados=mysqli_fetch_array($buscaCategorias);
+                                $categoriaId= $categoriasResultados ["id_categoria"];
+                                $categoriaNome= $categoriasResultados ["nome_categoria"];
+
+                            echo'
+                                <div class="btn-group" id="'.$categoriaId.'">
+                                    <button type="button" class="btn btn-info">'.$categoriaNome.'</button>
+                                    <button type="button" idCategoria="'.$categoriaId.'" class="btn btn-danger deletarCategoria"><i class="fas fa-trash-alt"></i></button>
+                                </div>';
+                        }
+                        ?>
                 </div>
             </div>
         </div>
