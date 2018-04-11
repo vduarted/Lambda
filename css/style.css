@@ -345,7 +345,7 @@ Galeria de vídeos
 }
 
 
-/* Efeit0 hover do ícone favoritos */
+/* Efeito hover do ícone favoritos */
 
 .explode {
     box-shadow: inset 0 0 20px rgba(255, 69, 0, 0);
@@ -474,4 +474,13 @@ textarea {
     font-size: 12px;
 }
 
-/* Checkboxes */
+/*
+========================================
+Página de gestão de categorias
+========================================
+*/
+
+.listaCategorias{
+    padding: 10px;
+    margin-bottom: 10px;
+}
