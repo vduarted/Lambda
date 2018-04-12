@@ -45,13 +45,13 @@
 
                             echo'
                                 <div class="btn-group" id="'.$categoriaId.'">
-                                    <button type="button" class="btn btn-info">'.$categoriaNome.'</button>
+                                    <button type="button" class="btn btn-info" disabled>'.$categoriaNome.'</button>
                                     <button type="button" idCategoria="'.$categoriaId.'" class="btn btn-danger deletarCategoria"><i class="fas fa-trash-alt"></i></button>
                                 </div>';
                         }
                         ?>
                     <div class="btn-group novaCategoria">
-                        <span contenteditable="true" class="btn btn-default">Nova categoria</span>
+                        <span contenteditable="true" class="btn btn-default" id="novaCategoria">Nova categoria</span>
                         <button type="button" class="btn btn-success"><i class="fas fa-plus"></i></button>
                     </div>
                 </div>

@@ -99,3 +99,14 @@ $(document).ready(function () {
         });
     });
 });
+//Remove texto do formulário de criação de novas categorias na página de gestão de categorias
+$("#novaCategoria").focusin(function () {
+    if ($("#novaCategoria").text() == "Nova categoria") {
+        $("#novaCategoria").text("");
+    }
+})
+$("#novaCategoria").focusout(function () {
+    if ($("#novaCategoria").text() == "") {
+        $("#novaCategoria").text("Nova categoria");
+    }
+})

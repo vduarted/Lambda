@@ -484,10 +484,15 @@ Página de gestão de categorias
     padding: 10px;
 }
 
+.listaCategorias .btn-info{
+    cursor: default;
+}
+
 .listaCategorias .btn-group{
     margin-bottom: 10px;
 }
 
-.novaCategoria{
-
+#novaCategoria{
+    min-width: 121px;
+    min-height: 34px;
 }
