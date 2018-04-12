@@ -32,6 +32,9 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="listaCategorias">
+                    <h1>
+                        CATEGORIAS CADASTRADAS
+                    </h1>
                     <?php 
                         for ($i=0;
                             $i < $quantResultados;
@@ -47,6 +50,10 @@
                                 </div>';
                         }
                         ?>
+                    <div class="btn-group novaCategoria">
+                        <span contenteditable="true" class="btn btn-default">Nova categoria</span>
+                        <button type="button" class="btn btn-success"><i class="fas fa-plus"></i></button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -89,28 +96,28 @@
                     <div class="col-lg-3 col-md-6">
                         <h3>Categories:</h3>
                         <ul>
-                            <li><a href=""><i class="fa fa-file"></i> News</a></li>
-                            <li><a href=""><i class="fa fa-android"></i> Android</a></li>
-                            <li><a href=""><i class="fa fa-code"></i> C#</a></li>
-                            <li><a href=""><i class="fa fa-code"></i> Java</a></li>
-                            <li><a href=""><i class="fa fa-book"></i> Books</a></li>
-                            <li><a href=""><i class="fa fa-globe"></i> Web</a></li>
-                            <li><a href=""><i class="fa fa-windows"></i> Windows</a></li>
+                            <li><a href=""><i class="fas fa-file"></i> News</a></li>
+                            <li><a href=""><i class="fas fa-android"></i> Android</a></li>
+                            <li><a href=""><i class="fas fa-code"></i> C#</a></li>
+                            <li><a href=""><i class="fas fa-code"></i> Java</a></li>
+                            <li><a href=""><i class="fas fa-book"></i> Books</a></li>
+                            <li><a href=""><i class="fas fa-globe"></i> Web</a></li>
+                            <li><a href=""><i class="fas fa-windows"></i> Windows</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h3>Contact:</h3>
                         <p>Have a question or feedback? Contact me!</p>
-                        <p><a href="" title="Contact me!"><i class="fa fa-envelope"></i> Contact</a></p>
+                        <p><a href="" title="Contact me!"><i class="fas fa-envelope"></i> Contact</a></p>
                         <h3>Follow:</h3>
                         <a href="" id="gh" target="_blank" title="Twitter"><span class="fa-stack fa-lg">
-                            <i class="fa fa-square-o fa-stack-2x"></i>
-                            <i class="fa fa-twitter fa-stack-1x"></i>
+                            <i class="fas fa-square-o fa-stack-2x"></i>
+                            <i class="fas fa-twitter fa-stack-1x"></i>
                             </span>
                             Twitter</a>
                         <a href="" target="_blank" title="GitHub"><span class="fa-stack fa-lg">
-                            <i class="fa fa-square-o fa-stack-2x"></i>
-                            <i class="fa fa-github fa-stack-1x"></i>
+                            <i class="fas fa-square-o fa-stack-2x"></i>
+                            <i class="fas fa-github fa-stack-1x"></i>
                             </span>
                             GitHub</a>
                     </div>
@@ -140,7 +147,6 @@
                                 fjs.parentNode.insertBefore(js, fjs);
                             }
                         }(document, 'script', 'twitter-wjs');
-
                     </script>
                     <div class="g-plusone" data-annotation="inline" data-width="300" data-href=""></div>
                     <!-- Helyezd el ezt a címkét az utolsó +1 gomb címke mögé. -->
@@ -153,7 +159,6 @@
                             var s = document.getElementsByTagName('script')[0];
                             s.parentNode.insertBefore(po, s);
                         })();
-
                     </script>
                     <br/>
                     <hr>
@@ -161,7 +166,6 @@
                         <p>Copyright © Your Website | <a href="">Privacy Policy</a> | <a href="">Terms of Use</a></p>
                     </div>
                 </div>
-
             </div>
         </div>
     </footer>
