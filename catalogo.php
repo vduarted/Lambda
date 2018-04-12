@@ -7,7 +7,7 @@
     <div class="container-fluid videoPlayer">
         <div class="row">
             <div class="col-md-1 setaVoltar">
-                <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
+                <i class="fas fa-chevron-circle-left" aria-hidden="true"></i>
             </div>
             <div class="col-md-10 col-md-offset-1 videoContainer">
             </div>
