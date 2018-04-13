@@ -55,20 +55,19 @@ $('.delFilme').click(function () {
         }
     });
 });
-document.addEventListener("DOMContentLoaded", function(event) {
-//        var conteudo = $(".title").text();
-//        if (conteudo == "MOST VIEWED") {
-//            conteudo.text("MAIS PROCURADOS");
-//        } else if (conteudo == "BEST SELLER") {
-//            conteudo.text("MAIS VENDIDOS");
-//        }
-});
+
+/*
+========================================
+Página de gestão de categorias
+========================================
+*/
+
 //Permite excluir as categorias de filmes já cadastradas da página de de Categorias
 $(document).ready(function () {
     //Pega os valores
-    $('.deletarCategoria').click(function () {
-        var $botaoClicado = $(this).find('.fas');
-        var $paiBotao = $(this);
+    $(".listaCategorias").on('click', '.deletarCategoria', function(){
+        var $iconeDoBotao = $(this).find('.fas');
+        var $botaoClicado = $(this);
         var $codCategoria = $(this).attr('idCategoria');
         // AJAX request
         $.ajax({
@@ -80,19 +79,15 @@ $(document).ready(function () {
             },
             beforeSend: function () {
                 // setting a timeout
-                $botaoClicado.removeClass("fa-trash-alt").addClass("fa-spinner fa-spin");
+                $iconeDoBotao.removeClass("fa-trash-alt").addClass("fas fa-cog fa-spin");
             },
             success: function (response) {
                 // Resposta
                 if (response == 1) {
                     setTimeout(function () {
-                        $paiBotao.removeClass("btn-danger").addClass("btn-success");
-                        $botaoClicado.removeClass("fa-spinner fa-spin").addClass("fa-check-circle");
-                    }, 1000);
-                    setTimeout(function () {
-                        $("#" + $codCategoria).fadeOut(500, function () {
-                            $("#" + $codCategoria).remove();
-                        });
+                        $botaoClicado.removeClass("btn-danger").addClass("btn-success");
+                        $iconeDoBotao.removeClass("fas fa-cog fa-spin").addClass("fas fa-check");
+                        $botaoClicado.parent().fadeOut("slow").remove();
                     }, 1000);
                 }
             }
@@ -100,13 +95,64 @@ $(document).ready(function () {
     });
 });
 //Remove texto do formulário de criação de novas categorias na página de gestão de categorias
-$("#novaCategoria").focusin(function () {
+$("#novaCategoria").click(function () {
     if ($("#novaCategoria").text() == "Nova categoria") {
-        $("#novaCategoria").text("");
+         $("#novaCategoria").empty();
     }
-})
+});
+//Testa de a categoria sendo cadastrada já existe
+$("#novaCategoria").focusout(function () {
+    var quantidadeCategorias = $(".nomeCategoria").length;
+    for(i = 0; i < quantidadeCategorias; i++) { 
+         if ($(".nomeCategoria").eq(i).text().toLocaleLowerCase() == $("#novaCategoria").text().toLocaleLowerCase()){
+            alert ("Esta categoria já existe");
+            $("#novaCategoria").empty();
+        }
+    }
+    $(".nomeCategoria").each(function(){
+        
+   })
+});
 $("#novaCategoria").focusout(function () {
     if ($("#novaCategoria").text() == "") {
         $("#novaCategoria").text("Nova categoria");
     }
-})
+});
+
+//Permite criar categorias novas para os filmes
+$(document).ready(function () {
+    //Pega os valores
+    $('.criarCategoria').click(function () {
+        var $iconeBotao = $(this).find('.fas');
+        var $botaoClicado = $(this);
+        var $nomeCategoria = $("#novaCategoria").text();
+        // AJAX request
+        $.ajax({
+            url: 'adicionarCategorias.php',
+            type: 'post',
+            dataType: "json",
+            data: {
+                nomeCategoria: $nomeCategoria
+            },
+            beforeSend: function () {
+                // Atraso de 1 seg para que tudo não aconteça tão derrepente
+                $iconeBotao.removeClass("fas fa-plus").addClass("fas fa-cog fa-spin");
+            },
+            success: function (response) {
+                // Resposta
+                if (response != 0) {
+                    //Muda ícone para 
+                    setTimeout(function () {
+                    $iconeBotao.removeClass("fas fa-cog fa-spin").addClass("fas fa-check");
+                    }, 1000);
+                    //Adiciona o novo botão com a nova categoria antes do botão de criação de nova categoria.
+                    $('<div class="btn-group nomeCategoria" id=""><button type="button" class="btn btn-info" disabled>'+$nomeCategoria+'</button><button type="button" idCategoria="'+response+'" class="btn btn-danger deletarCategoria"><i class="fas fa-trash-alt"></i></button></div>').prependTo(".listaCategorias").hide().fadeIn("slow");
+                    setTimeout(function () {
+                    $iconeBotao.removeClass("fas fa-check").addClass("fas fa-plus");
+                    $("#novaCategoria").text("Nova categoria").fadeIn("slow");
+                    }, 2000);
+                }
+            }
+        });
+    });
+});

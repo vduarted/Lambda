@@ -31,10 +31,10 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
+                <h1>
+                    CATEGORIAS CADASTRADAS
+                </h1>
                 <div class="listaCategorias">
-                    <h1>
-                        CATEGORIAS CADASTRADAS
-                    </h1>
                     <?php 
                         for ($i=0;
                             $i < $quantResultados;
@@ -45,14 +45,14 @@
 
                             echo'
                                 <div class="btn-group" id="'.$categoriaId.'">
-                                    <button type="button" class="btn btn-info" disabled>'.$categoriaNome.'</button>
+                                    <button type="button" class="btn btn-info nomeCategoria" disabled >'.$categoriaNome.'</button>
                                     <button type="button" idCategoria="'.$categoriaId.'" class="btn btn-danger deletarCategoria"><i class="fas fa-trash-alt"></i></button>
                                 </div>';
                         }
                         ?>
                     <div class="btn-group novaCategoria">
                         <span contenteditable="true" class="btn btn-default" id="novaCategoria">Nova categoria</span>
-                        <button type="button" class="btn btn-success"><i class="fas fa-plus"></i></button>
+                        <button type="button" class="btn btn-success criarCategoria"><i class="fas fa-plus"></i></button>
                     </div>
                 </div>
             </div>
@@ -136,7 +136,7 @@
                     </script>
                     <div class="fb-like" data-href="" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
                     <a href="https://twitter.com/share" class="twitter-share-button" data-url="">Tweet</a>
-                    <script>
+                    <!--<script>
                         ! function(d, s, id) {
                             var js, fjs = d.getElementsByTagName(s)[0],
                                 p = /^http:/.test(d.location) ? 'http' : 'https';
@@ -149,7 +149,7 @@
                         }(document, 'script', 'twitter-wjs');
                     </script>
                     <div class="g-plusone" data-annotation="inline" data-width="300" data-href=""></div>
-                    <!-- Helyezd el ezt a címkét az utolsó +1 gomb címke mögé. -->
+                    <!-- Helyezd el ezt a címkét az utolsó +1 gomb címke mögé.
                     <script type="text/javascript">
                         (function() {
                             var po = document.createElement('script');
@@ -159,7 +159,7 @@
                             var s = document.getElementsByTagName('script')[0];
                             s.parentNode.insertBefore(po, s);
                         })();
-                    </script>
+                    </script> -->
                     <br/>
                     <hr>
                     <div class="col-md-6 col-md-offset-3 text-center">
