@@ -172,28 +172,28 @@
                     <div class="col-lg-3 col-md-6">
                         <h3>Categories:</h3>
                         <ul>
-                            <li><a href=""><i class="fa fa-file"></i> News</a></li>
-                            <li><a href=""><i class="fa fa-android"></i> Android</a></li>
-                            <li><a href=""><i class="fa fa-code"></i> C#</a></li>
-                            <li><a href=""><i class="fa fa-code"></i> Java</a></li>
-                            <li><a href=""><i class="fa fa-book"></i> Books</a></li>
-                            <li><a href=""><i class="fa fa-globe"></i> Web</a></li>
-                            <li><a href=""><i class="fa fa-windows"></i> Windows</a></li>
+                            <li><a href=""><i class="fas fa-file"></i> News</a></li>
+                            <li><a href=""><i class="fas fa-android"></i> Android</a></li>
+                            <li><a href=""><i class="fas fa-code"></i> C#</a></li>
+                            <li><a href=""><i class="fas fa-code"></i> Java</a></li>
+                            <li><a href=""><i class="fas fa-book"></i> Books</a></li>
+                            <li><a href=""><i class="fas fa-globe"></i> Web</a></li>
+                            <li><a href=""><i class="fas fa-windows"></i> Windows</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h3>Contact:</h3>
                         <p>Have a question or feedback? Contact me!</p>
-                        <p><a href="" title="Contact me!"><i class="fa fa-envelope"></i> Contact</a></p>
+                        <p><a href="" title="Contact me!"><i class="fas fa-envelope"></i> Contact</a></p>
                         <h3>Follow:</h3>
                         <a href="" id="gh" target="_blank" title="Twitter"><span class="fa-stack fa-lg">
-                            <i class="fa fa-square-o fa-stack-2x"></i>
-                            <i class="fa fa-twitter fa-stack-1x"></i>
+                            <i class="fas fa-square-o fa-stack-2x"></i>
+                            <i class="fas fa-twitter fa-stack-1x"></i>
                             </span>
                             Twitter</a>
                         <a href="" target="_blank" title="GitHub"><span class="fa-stack fa-lg">
-                            <i class="fa fa-square-o fa-stack-2x"></i>
-                            <i class="fa fa-github fa-stack-1x"></i>
+                            <i class="fas fa-square-o fa-stack-2x"></i>
+                            <i class="fas fa-github fa-stack-1x"></i>
                             </span>
                             GitHub</a>
                     </div>

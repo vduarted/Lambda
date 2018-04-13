@@ -14,7 +14,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
     <!-- Font Awesome -->
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/fontawesome-all.min.css">
     <!-- Plyr CSS -->
     <link rel="stylesheet" type="text/css" href="css/plyr.css">
     <!--  Meu CSS  -->
@@ -26,7 +26,7 @@
     <div class="container-fluid videoPlayer">
         <div class="row">
             <div class="col-md-1 setaVoltar">
-                <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
+                <i class="fas fa-chevron-circle-left" aria-hidden="true"></i>
             </div>
             <div class="col-md-10 col-md-offset-1 videoContainer">
             </div>

@@ -14,7 +14,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
     <!-- Font Awesome -->
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/fontawesome-all.min.css">
     <!-- Plyr CSS -->
     <link rel="stylesheet" type="text/css" href="css/plyr.css">
     <!--  Meu CSS  -->
@@ -65,7 +65,7 @@
                                 $filmeDuracao= $filmeslResultados ["duracao_filme"];
 
                             echo'
-                            <tr id="'.$filmeId.'"><td>'.$filmeId.'</td><td>'.$filmetitulo.'</td><td><a href="editarFilme.php?idFilme='.$filmeId.'"><span class="btn btn-success"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span></a></td><td><a href="#" idFilme="'.$filmeId.'" class="btn btn-danger delFilme"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td></tr>';
+                            <tr id="'.$filmeId.'"><td>'.$filmeId.'</td><td>'.$filmetitulo.'</td><td><a href="editarFilme.php?idFilme='.$filmeId.'"><span class="btn btn-success"><i class="fas fa-pencil-square-o" aria-hidden="true"></i></span></a></td><td><a href="#" idFilme="'.$filmeId.'" class="btn btn-danger delFilme"><i class="fas fa-trash-o" aria-hidden="true"></i></a></td></tr>';
                         }
                         ?>
                 </table>
