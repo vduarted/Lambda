@@ -42,7 +42,6 @@
                                 $categoriasResultados=mysqli_fetch_array($buscaCategorias);
                                 $categoriaId= $categoriasResultados ["id_categoria"];
                                 $categoriaNome= $categoriasResultados ["nome_categoria"];
-
                             echo'
                                 <div class="btn-group" id="'.$categoriaId.'">
                                     <button type="button" class="btn btn-info nomeCategoria" disabled >'.$categoriaNome.'</button>

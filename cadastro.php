@@ -18,7 +18,7 @@ if (isset($_POST['nomeFilme'], $_POST['sinopseFilme'], $_POST['anoFilme'], $_POS
         $destino = './video/'.$idFilme.'/';
         if (!is_dir($destino)){
             if (!mkdir($destino, 0755, true)) {
-                die('Não foi possível criar a pasta do filme.');
+                die(header('Location:cadastro.php?cadastroFilme=ERROPASTA'));
             }
         }
         if (isset($_FILES['uploadedFiles']['tmp_name'])){
@@ -105,32 +105,27 @@ if (isset($_POST['nomeFilme'], $_POST['sinopseFilme'], $_POST['anoFilme'], $_POS
                         <div class="form-group">
                             <label for="categoriaFilme" class="control-label col-sm-2">CATEGORIA</label>
                             <div class=" col-sm-10">
-                                <div class="checkbox">
-                                    <label class="checkbox-custom" data-initialize="checkbox" id="checkboxes-0">
-                                    <input class="checkBoxCat" name="categoriaFilme[]" type="checkbox" value="1">
-                                    <span class="checkbox-label">Terror</span>
-                                </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label class="checkbox-custom" data-initialize="checkbox" id="checkboxes-0">
-                                    <input class="checkBoxCat" name="categoriaFilme[]" type="checkbox" value="2">
-                                    <span class="checkbox-label">Ação</span>
-                                </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label class="checkbox-custom" data-initialize="checkbox" id="checkboxes-0">
-                                    <input class="checkBoxCat" name="categoriaFilme[]" type="checkbox" value="3">
-                                    <span class="checkbox-label">Drama</span>
-                                </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label class="checkbox-custom" data-initialize="checkbox" id="checkboxes-0">
-                                    <input class="checkBoxCat" name="categoriaFilme[]" type="checkbox" value="4">
-                                    <span class="checkbox-label">Comédia</span>
-                                </label>
-                                </div>
+                                <?php
+                                    //Trecho reponsável por recuperar as informações das categorias já cadastradas no sistema.
+                                    include "conexao.php";
+                                    $buscaCategorias = mysqli_query($conexao, "SELECT * FROM tb_categoria;");
+                                    $quantidadeCategorias = mysqli_num_rows($buscaCategorias);
+                                    for ($i=0;
+                                        $i < $quantidadeCategorias;
+                                        $i++) {
+                                            $categoriasResultados=mysqli_fetch_array($buscaCategorias);
+                                            $categoriaId= $categoriasResultados ["id_categoria"];
+                                            $categoriaNome= $categoriasResultados ["nome_categoria"];
+                                        echo'
+                                            <div class="checkbox">
+                                                <label class="checkbox-inline" data-initialize="checkbox">
+                                                    <input class="checkBoxCat" name="categoriaFilme[]" type="checkbox" value="'.$categoriaId.'">
+                                                    <span class="checkbox-label">'.$categoriaNome.'</span>
+                                                </label>
+                                            </div>';
+                                    }
+                                ?>
                             </div>
-
                         </div>
                         <div class="form-group">
                             <label for="arquivoFilme" class="control-label col-sm-2"></label>
