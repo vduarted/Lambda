@@ -1,4 +1,5 @@
 <?php
+    //Arquivo responsável por estabelecer a conexão com o banco de dados principal
     $server = "localhost"; //Endereço do servidor
     $user = "root"; //Nome do usuário
 	$password = ""; //Senha
@@ -7,5 +8,5 @@
 	//Seleciona o banco de dados específico no servidor
 	$select = mysqli_select_db ($conexao, $database) or die("Não foi possível conectar-se ao banco de dados. Erro: ". mysql_error());
 	//Fim da conexão
-	mysqli_set_charset($conexao,'utf8'); //Determina chartset como UTF-    8
+	mysqli_set_charset($conexao,'utf8'); //Determina chartset como UTF-8
 ?>
