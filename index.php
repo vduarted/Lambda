@@ -28,7 +28,7 @@
             <div class="col-md-1 setaVoltar">
                 <i class="fas fa-chevron-circle-left" aria-hidden="true"></i>
             </div>
-            <div class="col-md-10 col-md-offset-1 videoContainer">
+            <div class="col-md-10 videoContainer">
             </div>
         </div>
     </div>

@@ -11,6 +11,8 @@ $(document).ready(function () {
         $(".videoPlayer").hide();
         players[0].stop();
         players[0].destroy();
+        $("body").css("overflow", "auto");
+        $("body").css("margin-right", "auto !important");
     });
     $(".botaoPlay").click(function () {
         var videoAtual = $(this).attr("videoAtual");;
@@ -19,6 +21,7 @@ $(document).ready(function () {
         $(".videoPlayer").show();
         var players = plyr.setup('.telaPlayer');
         players[0].play();
+        $("body").css("overflow", "hidden");
     });
 });
 
