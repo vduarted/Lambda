@@ -1,4 +1,10 @@
-// Setup do Plyr Plugin 
+/*
+========================================
+Página principal
+========================================
+*/
+
+// Setup do Plyr Plugin - Player dos filmes. Saiba mais sobre em: https://plyr.io/
 $(document).ready(function () {
     $(".setaVoltar i").click(function () {
         $(".videoContainer").empty();
@@ -16,12 +22,36 @@ $(document).ready(function () {
     });
 });
 
+//Limita a quantidade de texto exibida na sinopse dos filmes na tela principal
+
+$(document).ready(function () {
+    $(".sinopseFilme").each(function () {
+        var $limiteTexto = 250;
+        if ($(this).text().length >= $limiteTexto) {
+            $novaSinopse = $(this).text().substr(0, $limiteTexto);
+            $(this).text($novaSinopse + "...");
+        }
+    });
+});
+/*
+========================================
+Página de gestão de cadastro de filmes
+========================================
+*/
+
 // Remove o texto da sinopse do filme no formulário de cadastro de filmes
 $("#sinopseFilme").focusin(function () {
     if ($("#sinopseFilme").val() == "Digite aqui a sinopse do filme.") {
         $("#sinopseFilme").val("");
     }
 })
+
+/*
+========================================
+Página de gestão de listagem de filmes
+========================================
+*/
+
 //Exclui filmes da listagem de filmes
 $('.delFilme').click(function () {
     var $botaoClicado = $(this).find('.fa');

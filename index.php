@@ -91,7 +91,7 @@
                         <span>'.$filmeAno.' | '.$filmeAno.'</span>
                         <br>
                         <br>
-                        <p>'.$filmeDescricao.'</p>
+                        <p class="sinopseFilme">'.$filmeDescricao.'</p>
                         <div class="AddFavorito explode"><span class="glyphicon glyphicon-heart"></span></div>
                         <a href="#" class="botao botaoPlay" videoAtual="'.$videoAtual.'"><span class="glyphicon glyphicon-play"></span> Assistir</a>
                     </figcaption>
@@ -99,48 +99,6 @@
             </li>';
         }
         ?>
-        <!-- <li>
-            <figure>
-                <div><img src="img/covers/exemplo_2.jpg" alt="img05"></div>
-                <figcaption>
-                    <h3>The Howling</h3>
-                    <span>Terror</span>
-                    <br>
-                    <br>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <div class="AddFavorito explode"><span class="glyphicon glyphicon-heart"></span></div>
-                    <a href="#" class="botao botaoPlay"><span class="glyphicon glyphicon-play"></span> Assistir</a>
-                </figcaption>
-            </figure>
-        </li>
-        <li>
-            <figure>
-                <div><img src="img/covers/exemplo_3.jpg" alt="img05"></div>
-                <figcaption>
-                    <h3>The Howling</h3>
-                    <span>Terror</span>
-                    <br>
-                    <br>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <div class="AddFavorito explode"><span class="glyphicon glyphicon-heart"></span></div>
-                    <a href="#" class="botao botaoPlay"><span class="glyphicon glyphicon-play"></span> Assistir</a>
-                </figcaption>
-            </figure>
-        </li>
-        <li>
-            <figure>
-                <div><img src="img/covers/exemplo_4.jpg" alt="img05"></div>
-                <figcaption>
-                    <h3>The Howling</h3>
-                    <span>Terror</span>
-                    <br>
-                    <br>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <div class="AddFavorito explode"><span class="glyphicon glyphicon-heart"></span></div>
-                    <a href="#" class="botao botaoPlay"><span class="glyphicon glyphicon-play"></span> Assistir</a>
-                </figcaption>
-            </figure>
-        </li> -->
     </ul>
     <!--  Rodapé  -->
     <footer>

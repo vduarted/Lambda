@@ -99,7 +99,7 @@ if (isset($_POST['nomeFilme'], $_POST['sinopseFilme'], $_POST['anoFilme'], $_POS
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="sinopseFilme">Descrição</label>
                             <div class=" col-md-10">
-                                <textarea class="form-control" id="sinopseFilme" name="sinopseFilme" name="sinopseFilme" rows="6"><?php if (isset($_GET['sinopseFilme'])){echo $_GET['sinopseFilme'];} else{ echo 'Digite aqui a sinopse do filme.';}?></textarea>
+                                <textarea class="form-control" id="sinopseFilme" name="sinopseFilme" name="sinopseFilme" rows="4" maxlength="280"><?php if (isset($_GET['sinopseFilme'])){echo $_GET['sinopseFilme'];} else{ echo 'Digite aqui a sinopse do filme.';}?></textarea>
                             </div>
                         </div>
                         <div class="form-group">
