@@ -99,7 +99,7 @@
                     <div><img src="'.$imgAtual.'" alt="'.$filmetitulo.'"></div>
                     <figcaption>
                         <h3>'.$filmetitulo.'</h3>
-                        <span>'.$filmeAno.' | '/*.$categoriasFilme.*/'</span>
+                        <span>'.$filmeAno.' | Categoria do filme</span>
                         <br>
                         <br>
                         <p class="sinopseFilme">'.$filmeDescricao.'</p>
