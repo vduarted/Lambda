@@ -1,8 +1,3 @@
-<?php 
-    include "conexao.php";
-    $buscaFilmes = mysqli_query($conexao, "SELECT * FROM tb_filmes;");
-    $quantResultados = mysqli_num_rows($buscaFilmes);
-?>
 <!DOCTYPE html>
 <html>
 
@@ -52,7 +47,10 @@
     </div>
     <!--  Galeria de filmes  -->
     <ul class="grid cs-style-4">
-        <?php 
+        <?php
+            include "conexao.php";
+            $buscaFilmes = mysqli_query($conexao, "SELECT * FROM tb_filmes;");
+            $quantResultados = mysqli_num_rows($buscaFilmes);
         for ($i=0;
             $i < $quantResultados;
             $i++) {
@@ -62,13 +60,26 @@
                 $filmeDescricao= $filmeslResultados ["descricao_filme"];
                 $filmeAno= $filmeslResultados ["ano_filme"];
                 $filmeDuracao= $filmeslResultados ["duracao_filme"];
-            
+                /*
+                
+                //Busca de categorias do filme
+                $buscaCategorias = mysqli_query($conexao, "SELECT * FROM tb_categoria JOIN tb_filmesporcategoria ON tb_filmesporcategoria.id_categoria = tb_categoria.id_categoria WHERE id_filme = '.$filmeId.';");
+                $quantCategorias = mysqli_num_rows($buscaCategorias);
+                $categoriasFilme = array();
+                for ($i=0;
+                $i < $quantCategorias;
+                $i++) {
+                    $categoriaslResultados=mysqli_fetch_array($buscaCategorias);
+                    $categoriasFilme[$i] = $categoriaslResultados ["nome_categoria"];
+                }
+                $categoriasFilme=implode(", ",$categoriasFilme);
+                
+                */
                 //Busca os arquivos do filme:
                 $dir = 'video/'.$filmeId.'/';
                 $arquivos = scandir ($dir);
                 if(array_key_exists(2, $arquivos)){
                 $arquivoAtual = $dir . $arquivos[2];
-                //$ext = pathinfo($arquivoAtual, PATHINFO_EXTENSION);
                     if(@is_array(getimagesize($arquivoAtual))){
                     $imgAtual = $arquivoAtual;
                     $videoAtual = $dir . $arquivos[3];
@@ -85,10 +96,10 @@
             echo
             '<li>
                 <figure>
-                    <div><img src="'.$imgAtual.'" alt="img05"></div>
+                    <div><img src="'.$imgAtual.'" alt="'.$filmetitulo.'"></div>
                     <figcaption>
                         <h3>'.$filmetitulo.'</h3>
-                        <span>'.$filmeAno.' | '.$filmeAno.'</span>
+                        <span>'.$filmeAno.' | '/*.$categoriasFilme.*/'</span>
                         <br>
                         <br>
                         <p class="sinopseFilme">'.$filmeDescricao.'</p>
